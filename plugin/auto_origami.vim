@@ -47,6 +47,9 @@ endfunction
 "Attempt to move between folds, checking line numbers to see if it worked.
 "If it did, there are folds.
 function! s:Has_Folds_Inner()
+  if foldlevel(line('.')) > 0
+    return 1
+  endif
   let l:origline=line('.')
   :norm zk
   if l:origline==line('.')
