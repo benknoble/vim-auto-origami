@@ -9,15 +9,17 @@ set cpo&vim
 
 " Revised from
 " http://stackoverflow.com/questions/8757168/gvim-automatic-show-foldcolumn-when-there-are-folds-in-a-file
-function! auto_origami#Foldcolumn(column_width, default)
+function! auto_origami#Foldcolumn()
 
   let l:old_belloff=&belloff " save belloff setting
   set belloff=error " don't beep when we cause an error
   let l:winview=winsaveview() "save window and cursor position
+
   let l:foldsexist=s:Has_Folds_Inner()
-  let l:retval=a:default
+
+  let l:retval=g:auto_origami_default
   if l:foldsexist
-    let l:retval=a:column_width
+    let l:retval=g:auto_origami_foldcolum
   else
     "Move to the end of the current fold and check again in case the
     "cursor was on the sole fold in the file when we checked
@@ -30,11 +32,13 @@ function! auto_origami#Foldcolumn(column_width, default)
     endif
     let l:foldsexist=s:Has_Folds_Inner()
     if l:foldsexist
-      let l:retval=a:column_width
+      let l:retval=g:auto_origami_foldcolum
     endif
   end
+
   let &belloff=l:old_belloff
   call winrestview(l:winview) "restore window/cursor position
+
   return l:retval
 endfunction
 
