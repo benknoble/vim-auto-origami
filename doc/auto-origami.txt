@@ -18,6 +18,111 @@
                \___/ l__j\_j|____jl___,_jl__j__jl___j___j|____j              ~
                                                                              ~
 ==============================================================================
+CONTENTS                                             *auto-origami-contents*
 
+   1. Intro ........................................... |auto-origami-intro|
+   2. Usage ........................................... |auto-origami-usage|
+   3. Commands ..................................... |auto-origami-commands|
+   4. Configuration ........................... |auto-origami-configuration|
+   5. License ....................................... |auto-origami-license|
+   6. Bugs ............................................. |auto-origami-bugs|
+   7. Contribution.............................. |auto-origami-contribution|
+   8. Changelog.................................... |auto-origami-changelog|
+   9. Credits ....................................... |auto-origami-credits|
+
+==============================================================================
+INTRODUCTION                                            *auto-origami-intro*
+
+Auto Origami started as a Google & StackOverflow search, evolved into a vimrc
+function, then finally made it's way in to its very own plugin. Its concept is
+simple: automatically set 'foldcolumn' when there are folds present.
+
+Why "Auto Origami"? I like Origami as a name for a plugin about folds, but
+someone else did too, and had used it. I tacked on "Auto" to distinguish them.
+
+==============================================================================
+USAGE                                                   *auto-origami-usage*
+
+Fastest plugin use ever: >
+  vim somefiles-with-folds
+  :AutoOrigamiFoldColumn
+<
+
+If that seems like some stupid extra typing for a plugin that has "Auto" in
+the name, drop this in your vimrc: >
+  augroup auto_origami
+    au!
+
+    au CursorHold,BufWinEnter,WinEnter * let &foldcolumn =
+         \ auto_origami#Foldcolumn()
+  augroup END
+>
+
+Of course, feel free to use any |autocmd-events| you want.
+
+==============================================================================
+COMMANDS                                             *auto-origami-commands*
+
+`:AutoOrigamiFoldColumn`
+
+Set the fold column to |g:auto_origami_foldcolumn| if folds are present,
+|g:auto_origami_default| otherwise.
+
+==============================================================================
+CONFIGURATION                                   *auto-origami-configuration*
+
+Default values shown
+
+                                                 *g:auto_origami_foldcolumn*
+* 'foldcolumn' value if there are folds >
+  let g:auto_origami_foldcolumn = 2
+<
+
+                                                 *g:auto_origami_default*
+* 'foldcolumn' value if there are no folds >
+  let g:auto_origami_default = 0
+<
+
+==============================================================================
+LICENSE                                               *auto-origami-license*
+
+MIT License. Copyright © 2017 David Knoble.
+Full text available at
+https://github.com/benknoble/vim-auto-origami/blog/master/LICENSE
+
+==============================================================================
+BUGS                                                     *auto-origami-bugs*
+
+At the time of this writing, no major bugs have yet been found.
+
+If you find one and want to report it, you can do so at
+https://github.com/benknoble/vim-auto-origami/issues
+
+==============================================================================
+CONTRIBUTION                                     *auto-origami-contribution*
+
+Do you want to submit a new feature, bugfix, or otherwise hack on Auto
+Origami? Submit pull requests to
+https://github.com/benknoble/vim-auto-origami/pulls
+
+See the code for style guidelines.
+
+==============================================================================
+CHANGELOG                                           *auto-origami-changelog*
+
+*v1.0.0*                                                      27 August 2017
+  * Initial release
+
+==============================================================================
+CREDITS                                               *auto-origami-credits*
+
+Originally developed by benknoble <github.com/benknoble>
+
+Git repository:         https://github.com/benknoble/vim-auto-origami
+
+Special thanks to StackOverflow user @SnoringFrog for his answer to a simple
+question.
+<https://stackoverflow.com/users/919057/snoringfrog>
+<https://stackoverflow.com/questions/8757168/gvim-automatic-show-foldcolumn-when-there-are-folds-in-a-file>
 
  vim:tw=78:ts=8:ft=help:norl:
