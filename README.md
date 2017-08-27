@@ -1,6 +1,9 @@
 # vim-auto-origami
 Automatically set vim's 'foldcolumn' when folds present
 
+Check it out on [vim.org](http://www.vim.org/scripts/script.php?script_id=5601)
+too.
+
 ## Installation
 
 I recommend using [Pathogen](https://github.com/tpope/vim-pathogen) for managing
