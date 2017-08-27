@@ -1,3 +1,7 @@
+" auto_origami.vim      Automatically setting your foldcolumn, whenver you want!
+" Maintainer:           David Knoble
+"                       github @benknoble
+
 if exists("g:loaded_auto_origami")
   finish
 endif
@@ -8,6 +12,7 @@ if !has("folding")
   echohl ErrorMsg
   echom "Auto Origami needs the +folding feature!"
   echohl None
+  finish
 endif
 
 let s:save_cpo = &cpo
