@@ -24,7 +24,7 @@ augroup autofoldcolumn
   au!
 
   " Or whatever autocmd-events you want
-  au CursorHold,BufWinEnter * let &foldcolumn = auto_origami#Foldcolumn()
+  au CursorHold,BufWinEnter,WinEnter * AutoOrigamiFoldColumn
 augroup END
 ```
 

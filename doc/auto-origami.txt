@@ -48,13 +48,12 @@ Fastest plugin use ever: >
   :AutoOrigamiFoldColumn
 <
 
-If that seems like some stupid extra typing for a plugin that has "Auto" in
+If that seems like some extra typing for a plugin that has "Auto" in
 the name, drop this in your vimrc: >
   augroup auto_origami
     au!
 
-    au CursorHold,BufWinEnter,WinEnter * let &foldcolumn =
-         \ auto_origami#Foldcolumn()
+    au CursorHold,BufWinEnter,WinEnter * AutoOrigamiFoldColumn
   augroup END
 >
 
@@ -109,6 +108,9 @@ See the code for style guidelines.
 
 ==============================================================================
 CHANGELOG                                           *auto-origami-changelog*
+
+*v1.0.1*                                                      15 October 2017
+  * Update Documentation to better reflect usage
 
 *v1.0.0*                                                      27 August 2017
   * Initial release
