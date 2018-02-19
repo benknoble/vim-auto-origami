@@ -15,6 +15,11 @@ set cpo&vim
 " http://stackoverflow.com/questions/8757168/gvim-automatic-show-foldcolumn-when-there-are-folds-in-a-file
 function! auto_origami#Foldcolumn()
 
+  " Early exit: if 'nofoldenable' set, return the default value
+  if ! &foldenable
+    return g:auto_origami_default
+  endif
+
   let l:old_belloff=&belloff  " save belloff setting
   set belloff=error           " don't beep when we cause an error
   let l:winview=winsaveview() " save window and cursor position
