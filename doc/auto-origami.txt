@@ -67,6 +67,10 @@ COMMANDS                                             *auto-origami-commands*
 Set the fold column to |g:auto_origami_foldcolumn| if folds are present,
 |g:auto_origami_default| otherwise.
 
+As of |v1.1.0|, |auto-origami| will always use the |g:auto_origami_default|
+value when 'nofoldenable' is set. With folds disabled, there should be no
+distracting 'foldcolumn'.
+
 ==============================================================================
 CONFIGURATION                                   *auto-origami-configuration*
 
@@ -108,6 +112,9 @@ See the code for style guidelines.
 
 ==============================================================================
 CHANGELOG                                           *auto-origami-changelog*
+
+*v1.1.0*                                                      19 February 2018
+  * Exit early with default value if 'nofoldenable' is set
 
 *v1.0.1*                                                      15 October 2017
   * Update Documentation to better reflect usage
