@@ -1,4 +1,4 @@
-" auto_origami.vim      Automatically setting your foldcolumn, whenver you want!
+" auto_origami.vim      Automatically setting your foldcolumn, whenever you want!
 " Maintainer:           David Knoble
 "                       github @benknoble
 
