@@ -2,7 +2,7 @@
 " Maintainer:           David Knoble
 "                       github @benknoble
 
-if exists("g:loaded_auto_origami")
+if exists("g:loaded_auto_origami") || &compatible
   finish
 endif
 
