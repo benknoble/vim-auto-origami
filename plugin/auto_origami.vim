@@ -18,13 +18,9 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-if !exists("g:auto_origami_foldcolum")
-  let g:auto_origami_foldcolum = 2
-endif
+let g:auto_origami_foldcolum = get(g:, 'auto_origami_foldcolum', 2)
 
-if !exists("g:auto_origami_default")
-  let g:auto_origami_default = 0
-endif
+let g:auto_origami_default = get(g:, 'auto_origami_default', 0)
 
 command AutoOrigamiFoldColumn let &foldcolumn = auto_origami#Foldcolumn()
 
