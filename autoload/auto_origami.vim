@@ -28,7 +28,7 @@ function! auto_origami#Foldcolumn()
 
   let l:retval=g:auto_origami_default
   if l:foldsexist
-    let l:retval=g:auto_origami_foldcolum
+    let l:retval=g:auto_origami_foldcolumn
   else
     " Move to the end of the current fold and check again in case the
     " cursor was on the sole fold in the file when we checked
@@ -41,7 +41,7 @@ function! auto_origami#Foldcolumn()
     endif
     let l:foldsexist=s:Has_Folds_Inner()
     if l:foldsexist
-      let l:retval=g:auto_origami_foldcolum
+      let l:retval=g:auto_origami_foldcolumn
     endif
   end
 

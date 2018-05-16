@@ -1,4 +1,4 @@
-*auto-origami.txt* Automatically set the foldcolum
+*auto-origami.txt* Automatically set the foldcolumn
 *auto-origami* *vim-auto-origami*
 
                           ____  __ __  ______   ___                          ~
