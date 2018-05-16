@@ -10,7 +10,6 @@ install_vim8() {
   source ~/.vvm/etc/login
   vvm update_itself
   vvm use vimorg--v8.0.1529 --install --with-features=huge
-  rvm use 2.5.0 --install --binary --fuzzy
 }
 
 install_vader() {
