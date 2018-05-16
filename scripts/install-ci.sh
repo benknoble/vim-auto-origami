@@ -5,8 +5,13 @@ set -euo pipefail
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}")" && pwd )"
 plugin_dir="$( dirname "$dir" )"
 
+get_vvm() {
+  url='https://raw.githubusercontent.com/kana/vim-version-manager/master/bin/vvm'
+  curl "$url" | python - setup
+}
+
 install_vim8() {
-  curl https://raw.githubusercontent.com/kana/vim-version-manager/master/bin/vvm | python - setup; true
+  get_vvm || true
   source ~/.vvm/etc/login
   vvm update_itself
   vvm use vimorg--v8.0.1529 --install --with-features=huge
