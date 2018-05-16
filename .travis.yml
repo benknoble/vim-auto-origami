@@ -1,4 +1,8 @@
 language: vim
+cache:
+  directories:
+    - $HOME/.rvm
+    - $HOME/.vvm
 
 before_script: scripts/install-ci.sh
 
