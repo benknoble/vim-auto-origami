@@ -9,4 +9,4 @@ before_script: scripts/install-ci.sh
 script: scripts/test-ci.sh
 
 notifications:
-  mail: false
+  email: false
