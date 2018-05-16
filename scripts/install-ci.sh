@@ -18,6 +18,7 @@ install_vader() {
 }
 
 install() {
+  install_vim8
   install_vader
 }
 
