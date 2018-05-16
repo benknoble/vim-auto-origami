@@ -1,0 +1,58 @@
+Before (set up auto origami):
+  set foldmethod=marker
+  set foldenable
+
+Given (a file with no folds):
+  This is some text
+
+Execute (AutoOrigamiFoldColumn):
+  AutoOrigamiFoldColumn
+
+Then (assert the foldcolumn is 0):
+  AssertEqual 0, &foldcolumn
+
+Given vim (a file with a fold):
+  " One Fold {{{
+
+  " End }}}
+
+Execute (AutoOrigamiFoldColumn):
+  AutoOrigamiFoldColumn
+
+Then (assert the foldcolumn is 2):
+  AssertEqual 2, &foldcolumn
+
+Given vim (a file with nested folds):
+  " Fold {{{
+
+  " Nested Fold {{{
+  " End Fold }}}
+
+  " End Fold }}}
+
+Execute (AutoOrigamiFoldColumn):
+  AutoOrigamiFoldColumn
+
+Then (assert the foldcolumn is 2):
+  AssertEqual 2, &foldcolumn
+
+Given vim (a file with multiple folds):
+  " Fold {{{
+
+  " Nested Fold {{{
+  " End Fold }}}
+
+  " End Fold }}}
+
+  " Fold {{{
+
+  " Nested Fold {{{
+  " End Fold }}}
+
+  " End Fold }}}
+
+Execute (AutoOrigamiFoldColumn):
+  AutoOrigamiFoldColumn
+
+Then (assert the foldcolumn is 2):
+  AssertEqual 2, &foldcolumn

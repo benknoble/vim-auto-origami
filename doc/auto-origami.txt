@@ -1,4 +1,4 @@
-*auto-origami.txt* Automatically set the foldcolum
+*auto-origami.txt* Automatically set the foldcolumn
 *auto-origami* *vim-auto-origami*
 
                           ____  __ __  ______   ___                          ~
@@ -112,6 +112,10 @@ See the code for style guidelines.
 
 ==============================================================================
 CHANGELOG                                           *auto-origami-changelog*
+
+*v1.1.1*                                                      16 May 2018
+  * Fix the spelling of "colum" ("column") in variables
+  * Enable integration testing
 
 *v1.1.0*                                                      19 February 2018
   * Exit early with default value if 'nofoldenable' is set

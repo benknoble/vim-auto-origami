@@ -18,7 +18,7 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
-let g:auto_origami_foldcolum = get(g:, 'auto_origami_foldcolum', 2)
+let g:auto_origami_foldcolumn = get(g:, 'auto_origami_foldcolumn', 2)
 
 let g:auto_origami_default = get(g:, 'auto_origami_default', 0)
 
