@@ -1,8 +1,11 @@
 language: vim
-cache:
-  directories:
-    - $HOME/.rvm
-    - $HOME/.vvm
+
+addons:
+  apt:
+    sources:
+      - sourceline: 'ppa:jonathonf/vim'
+    packages:
+      - vim
 
 before_script: scripts/install-ci.sh
 
