@@ -10,6 +10,8 @@ install_vim8() {
   source ~/.vvm/etc/login
   vvm update_itself
   vvm use vimorg--v8.0.1529 --install --with-features=huge
+  # check for version 8
+  vim --version | grep -q 'IMproved 8'
 }
 
 install_vader() {
