@@ -1,0 +1,5 @@
+language: vim
+
+before_script: scripts/install-ci.sh
+
+script: scripts/test-ci.sh
