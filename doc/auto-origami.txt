@@ -113,9 +113,15 @@ See the code for style guidelines.
 ==============================================================================
 CHANGELOG                                           *auto-origami-changelog*
 
-*v1.1.1*                                                      16 May 2018
+*v1.1.3*                                                      16 May 2018
   * Fix the spelling of "colum" ("column") in variables
   * Enable integration testing
+
+*v1.1.2*                                                      15 May 2018
+  * Internal changes to default variable setup
+
+*v1.1.1*                                                      14 April 2018
+  * Don't load in compatible mode
 
 *v1.1.0*                                                      19 February 2018
   * Exit early with default value if 'nofoldenable' is set
