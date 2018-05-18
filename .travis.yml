@@ -1,5 +1,9 @@
 language: vim
 
+os:
+  - linux
+  - osx
+
 addons:
   apt:
     sources:

@@ -6,8 +6,9 @@ dir="$( cd "$( dirname "${BASH_SOURCE[0]}")" && pwd )"
 plugin_dir="$( dirname "$dir" )"
 
 install_vim8() {
-  # check for version 8
-  vim --version | grep -q 'IMproved 8'
+  if [[ "$TRAVIS_OS_NAME" == osx ]]; then
+    brew update && brew install vim
+  fi
 }
 
 install_vader() {
