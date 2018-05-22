@@ -24,11 +24,21 @@ function! auto_origami#Foldcolumn()
   set belloff=error           " don't beep when we cause an error
   let l:winview=winsaveview() " save window and cursor position
 
-  let l:foldsexist=s:Has_Folds_Inner()
+  let l:foldcolumn = s:HasFolds() ?
+        \ g:auto_origami_foldcolumn :
+        \ g:auto_origami_default
 
-  let l:retval=g:auto_origami_default
+  let &belloff=l:old_belloff  " restore belloff setting
+  call winrestview(l:winview) " restore window/cursor position
+
+  return l:foldcolumn
+endfunction
+
+function! s:HasFolds()
+  let l:foldsexist=s:HasFoldsInner()
+
   if l:foldsexist
-    let l:retval=g:auto_origami_foldcolumn
+    return v:true
   else
     " Move to the end of the current fold and check again in case the
     " cursor was on the sole fold in the file when we checked
@@ -39,21 +49,18 @@ function! auto_origami#Foldcolumn()
       normal ]z
       normal j
     endif
-    let l:foldsexist=s:Has_Folds_Inner()
+    let l:foldsexist=s:HasFoldsInner()
     if l:foldsexist
-      let l:retval=g:auto_origami_foldcolumn
+      return v:true
     endif
   end
 
-  let &belloff=l:old_belloff  " restore belloff setting
-  call winrestview(l:winview) " restore window/cursor position
-
-  return l:retval
+  return v:false
 endfunction
 
 " Attempt to move between folds, checking line numbers to see if it worked.
 " If it did, there are folds.
-function! s:Has_Folds_Inner()
+function! s:HasFoldsInner()
   if foldlevel(line('.')) > 0
     return 1
   endif
