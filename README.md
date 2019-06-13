@@ -1,4 +1,7 @@
 # vim-auto-origami
+
+[![This project is considered finished](https://img.shields.io/badge/status-finished-success.svg)](https://benknoble.github.io/status/finished/)
+
 Automatically set vim's 'foldcolumn' when folds present
 
 Check it out on [vim.org](http://www.vim.org/scripts/script.php?script_id=5601)
