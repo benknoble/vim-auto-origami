@@ -62,7 +62,7 @@ Of course, feel free to use any |autocmd-events| you want.
 ==============================================================================
 COMMANDS                                             *auto-origami-commands*
 
-`:AutoOrigamiFoldColumn`
+*:AutoOrigamiFoldColumn*
 
 Set the fold column to |g:auto_origami_foldcolumn| if folds are present,
 |g:auto_origami_default| otherwise.
@@ -112,6 +112,9 @@ See the code for style guidelines.
 
 ==============================================================================
 CHANGELOG                                           *auto-origami-changelog*
+
+*v1.1.5*                                                      25 July 2019
+  * Make AutoOrigamiFoldColumn a helptag
 
 *v1.1.4*                                                      22 May 2018
   * Internal refactoring
