@@ -8,6 +8,9 @@ plugin_dir="$( dirname "$dir" )"
 install_vim8() {
   if [[ "$(uname)" == osx ]]; then
     brew update && brew install vim
+  else
+    add-apt-repository ppa:jonathonf/vim
+    apt-get update
   fi
 }
 
