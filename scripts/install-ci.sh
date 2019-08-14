@@ -11,6 +11,7 @@ install_vim8() {
   else
     sudo add-apt-repository ppa:jonathonf/vim
     sudo apt-get update
+    sudo apt-get install vim
   fi
 }
 
