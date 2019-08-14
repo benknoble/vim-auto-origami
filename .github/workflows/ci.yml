@@ -1,0 +1,16 @@
+name: CI
+on: [push]
+
+jobs:
+  build-and-test:
+    strategy:
+      max-parallel: 4
+      matrix:
+        os: [ubuntu-16.04, ubuntu-18.04, macos-latest]
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Install dependencies
+        run: ./scripts/install-ci.sh
+      - name: Test
+        run: ./scripts/test-ci.sh

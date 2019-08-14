@@ -7,7 +7,6 @@ plugin_dir="$( dirname "$dir" )"
 
 run_tests() {
   vim -Nu <(cat << VIMRC
-set rtp+=~/.vim/bundle/vader
 set rtp+=$plugin_dir
 VIMRC
   ) -c "Vader! ${plugin_dir}/test/*" > /dev/null
