@@ -113,6 +113,9 @@ See the code for style guidelines.
 ==============================================================================
 CHANGELOG                                           *auto-origami-changelog*
 
+*v1.1.6*                                                      21 May 2020
+  * Use `:normal!` to avoid issues with mappings.
+
 *v1.1.5*                                                      25 July 2019
   * Make AutoOrigamiFoldColumn a helptag
 

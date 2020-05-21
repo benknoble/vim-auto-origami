@@ -43,11 +43,11 @@ function! s:HasFolds()
     " Move to the end of the current fold and check again in case the
     " cursor was on the sole fold in the file when we checked
     if line('.')!=1
-      normal [z
-      normal k
+      normal! [z
+      normal! k
     else
-      normal ]z
-      normal j
+      normal! ]z
+      normal! j
     endif
     let l:foldsexist=s:HasFoldsInner()
     if l:foldsexist
@@ -65,9 +65,9 @@ function! s:HasFoldsInner()
     return 1
   endif
   let l:origline=line('.')
-  normal zk
+  normal! zk
   if l:origline==line('.')
-    normal zj
+    normal! zj
     if l:origline==line('.')
       return 0
     else
